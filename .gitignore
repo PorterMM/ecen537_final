@@ -47,6 +47,7 @@ compile_commands.json
 !.env.*.example
 secrets/
 docker-data/
+.docker-state/
 *.tar
 *.tar.gz
 

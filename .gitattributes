@@ -1,0 +1,4 @@
+# Shell scripts must remain executable Linux text when checked out on Windows.
+*.sh text eol=lf
+*.bash text eol=lf
+Dockerfile text eol=lf
