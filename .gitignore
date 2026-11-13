@@ -1,0 +1,63 @@
+# ROS 2 / colcon workspace outputs (including nested workspaces)
+build/
+install/
+log/
+.colcon/
+
+# ROS runtime data and recorded sensor data
+.ros/
+rosbag2_*/
+*.bag
+*.bag.active
+*.db3
+*.db3-shm
+*.db3-wal
+*.mcap
+
+# Gazebo / Ignition caches and logs
+.gazebo/
+.ignition/
+.gz/
+
+# Python build artifacts and environments
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# CMake artifacts generated outside the build directory
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
+
+# Local secrets and container runtime data
+.env
+.env.*
+!.env.example
+!.env.*.example
+secrets/
+docker-data/
+*.tar
+*.tar.gz
+
+# Machine-specific tooling and credentials
+.agents/
+.aws/
+.codex/
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
