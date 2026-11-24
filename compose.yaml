@@ -1,0 +1,24 @@
+name: ecen537-final
+
+services:
+  dev:
+    image: ecen537-final:jazzy-${DEV_UID:-1000}-${DEV_GID:-1000}
+    build:
+      context: .
+      args:
+        DEV_UID: ${DEV_UID:-1000}
+        DEV_GID: ${DEV_GID:-1000}
+    init: true
+    stdin_open: true
+    tty: true
+    shm_size: 1gb
+    environment:
+      ROS_DOMAIN_ID: ${ROS_DOMAIN_ID:-0}
+      ROS_AUTOMATIC_DISCOVERY_RANGE: LOCALHOST
+      LIBGL_ALWAYS_SOFTWARE: "1"
+      QT_X11_NO_MITSHM: "1"
+    volumes:
+      - type: bind
+        source: .
+        target: /workspaces/ecen537_final
+    # The default Compose bridge is sufficient: all ROS nodes run in dev.

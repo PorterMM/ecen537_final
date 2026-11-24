@@ -1,0 +1,12 @@
+# Only the image definition and container support files belong in the context.
+# The source checkout is bind-mounted at runtime instead of copied into the image.
+**
+!Dockerfile
+!docker/
+docker/**
+!docker/setup.bash
+!docker/entrypoint.sh
+!docker/smoke.sh
+!docker/worlds/
+docker/worlds/**
+!docker/worlds/empty.sdf

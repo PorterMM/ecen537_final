@@ -1,0 +1,19 @@
+services:
+  dev:
+    environment:
+      DISPLAY: ${DISPLAY:?Run scripts/dev.sh up from a desktop terminal}
+      XAUTHORITY: /tmp/ecen537.Xauthority
+      QT_QPA_PLATFORM: xcb
+    volumes:
+      - type: bind
+        source: ${DEV_X11_SOCKET_DIR:?Use scripts/dev.sh up}
+        target: /tmp/.X11-unix
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ${DEV_XAUTHORITY:?Use scripts/dev.sh up}
+        target: /tmp/ecen537.Xauthority
+        read_only: true
+        bind:
+          create_host_path: false
